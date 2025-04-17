@@ -1,0 +1,58 @@
+openapi: 3.0.1
+info:
+  title: Dummy Booking API
+  version: 1.0.0
+
+paths:
+  /api/v1/bookings:
+    post:
+      summary: Create a new booking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                checkInDate:
+                  type: string
+                checkOutDate:
+                  type: string
+                roomType:
+                  type: string
+              required:
+                - customerId
+                - checkInDate
+                - checkOutDate
+                - roomType
+      responses:
+        '201':
+          description: Booking created successfully
+
+  /api/v1/bookings/{bookingId}:
+    get:
+      summary: Get booking by ID
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Booking details
+
+  /api/v1/availability:
+    get:
+      summary: Check room availability
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Availability data
