@@ -1,6 +1,6 @@
 #  Gatling Genie
 
-**Gatling Genie** is a CLI tool that uses OpenAI's GPT models to generate Gatling (Java) performance test simulations from OpenAPI specifications. It simplifies the creation of realistic load testing scripts by interpreting your API spec and generating ready-to-use Gatling code.
+**Gatling Genie** is a CLI tool that uses OpenAI's GPT models to generate [Gatling](https://gatling.io/)  performance test simulations from OpenAPI specifications. It simplifies the creation of realistic load testing scripts by interpreting your API spec and generating ready-to-use Gatling code.
 
 ---
 
