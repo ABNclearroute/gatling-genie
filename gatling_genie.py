@@ -2,7 +2,6 @@ import yaml
 import click
 from openai import OpenAI
 
-# Analyze OpenAPI spec using OpenAI
 def analyze_openapi_spec_with_openai(openapi_spec: str, api_key: str, model: str):
     client = OpenAI(api_key=api_key)
 
@@ -89,9 +88,6 @@ def load_openapi_spec(file_path: str):
 @click.option('--model', default='gpt-3.5-turbo', help="OpenAI model to use (e.g. gpt-3.5-turbo or gpt-4)")
 @click.option('--output-file', default='generated_simulation.java', help="Output file for the generated Gatling simulation")
 def generate_gatling_simulation(openapi_spec_path, openai_api_key, model, output_file):
-    """
-    gatling-genie: A CLI tool to generate Gatling simulations using OpenAPI specs + OpenAI.
-    """
 
     print("Loading OpenAPI spec...")
     openapi_spec = load_openapi_spec(openapi_spec_path)
